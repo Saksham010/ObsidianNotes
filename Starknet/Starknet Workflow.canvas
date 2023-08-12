@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"type":"file","file":"Starknet/Provers.md","id":"421ad3ed2a524bfe","x":-520,"y":-720,"width":660,"height":340},
+		{"type":"text","text":"<h1> Ethereum </h1>\n- If proof is valid the transactions are accepted by ethereum","id":"50ba8e20a204a6b0","x":7,"y":200,"width":573,"height":160},
+		{"type":"text","text":"Proof","id":"d923122f4ee16272","x":-720,"y":175,"width":120,"height":50},
+		{"type":"file","file":"Starknet/Sequencer.md","id":"7de12a63a2bebc70","x":1220,"y":-800,"width":720,"height":360},
+		{"type":"file","file":"Starknet/Starknet.md","id":"846dc3ea5fbb8087","x":880,"y":0,"width":840,"height":840}
+	],
+	"edges":[
+		{"id":"2a84df746a3f99a0","fromNode":"846dc3ea5fbb8087","fromSide":"top","toNode":"7de12a63a2bebc70","toSide":"bottom","label":"Outsource transaction processing"},
+		{"id":"56d039439ab00f8e","fromNode":"7de12a63a2bebc70","fromSide":"left","toNode":"421ad3ed2a524bfe","toSide":"right","label":"Process transactions and batch them\nto generate a block "},
+		{"id":"1f0ee64eade5f801","fromNode":"421ad3ed2a524bfe","fromSide":"left","toNode":"d923122f4ee16272","toSide":"left","label":"Recompute transactions in block\nand generate proof of transactions"},
+		{"id":"1073c3457e3bac94","fromNode":"d923122f4ee16272","fromSide":"bottom","toNode":"50ba8e20a204a6b0","toSide":"left","label":"Prover sends proof \nto ethereum"}
+	]
+}

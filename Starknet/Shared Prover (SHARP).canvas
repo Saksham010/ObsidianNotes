@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"type":"text","text":"Cairo job (Program)","id":"27d702c022f94edd","x":-620,"y":-140,"width":250,"height":60},
+		{"type":"text","text":"Prover\n- Generates recursive proof \n- Recursive proof: \n\t- Proof + Proof of execution trace of new cairo job","id":"1c8fd865d2867289","x":260,"y":-110,"width":360,"height":290},
+		{"type":"text","text":"Cairo Runner\n- Runs cairo program and generates execution trace","id":"11bfb95d4c089aee","x":-240,"y":-217,"width":280,"height":215},
+		{"type":"text","text":"Stark Verifier\n- Receives a proof and creates a new cairo job","id":"65ecd9f09e9f5769","x":-635,"y":-420,"width":280,"height":180},
+		{"type":"text","text":"Solidity Verifier (Ethereum)\n- Verifies if the proof is valid\n- If proof is valid transaction is accepted. Acceptance by L1","id":"93dd5cea765a3498","x":-680,"y":180,"width":560,"height":180},
+		{"type":"text","text":"Notes\n- Sharp is stateless: \n\t- Each cairo job is executed in its own context and does not depend on other job\n- Exponential amortization:\n\t- As computational load increases, more transaction can be included in a block which has one proof.\n\t- The cost of verifying these proof in ethereum increases at a slower logarithmic rate than the increase in computation load. So more the transaction load, the higher the tps.","id":"a08e566c383f2702","x":190,"y":-780,"width":860,"height":410}
+	],
+	"edges":[
+		{"id":"005c4ceb53d1196a","fromNode":"27d702c022f94edd","fromSide":"right","toNode":"11bfb95d4c089aee","toSide":"left"},
+		{"id":"391af8e1b823ca6f","fromNode":"11bfb95d4c089aee","fromSide":"right","toNode":"1c8fd865d2867289","toSide":"left","label":"Execution Trace"},
+		{"id":"11ea47e5cccaf32d","fromNode":"27d702c022f94edd","fromSide":"bottom","toNode":"1c8fd865d2867289","toSide":"bottom"},
+		{"id":"21591dceae87536a","fromNode":"65ecd9f09e9f5769","fromSide":"bottom","toNode":"27d702c022f94edd","toSide":"top","label":"Generate"},
+		{"id":"7dc658a43b70f4c7","fromNode":"1c8fd865d2867289","fromSide":"top","toNode":"65ecd9f09e9f5769","toSide":"top","label":"Proof"},
+		{"id":"f286345f886ba9a2","fromNode":"65ecd9f09e9f5769","fromSide":"left","toNode":"93dd5cea765a3498","toSide":"left","label":"Final aggregated proof"}
+	]
+}

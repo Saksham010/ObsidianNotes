@@ -1,0 +1,5 @@
+- Provers get block of transaction from sequencer. 
+- Provers recompute the transactions within a block to ensure all of the transactions are valid
+- Provers generate proof of transactions which are then sent to the ethereum network for validation
+- If the proof is correct , ethereum accepts the transactions.
+- More centralized due to more resource requirement
