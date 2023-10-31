@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"958f72e4af867709","type":"text","text":"Logic Contract\n\n```sol\ninterface DataContract{\n\tfunction set(uint) external returns(bool);\n}\n\ncontract LogicContract is Pausible {\n\n\taddress dataContractAdr = 0xaxf...\n\t\n\tfunction setdata(uint value) external {\n\t\tDataContract(dataContractAdr).set(value);\n\t}\n\n}\n```","x":-420,"y":-200,"width":740,"height":530},
+		{"id":"44670a627e604713","type":"text","text":"User","x":-740,"y":-10,"width":140,"height":75},
+		{"id":"e0fcf22262e2b539","type":"text","text":"Data Contract\n\n```sol\n\ncontract DataContract{\n\n\tuint256 balance;\n\n\tfunction set(uint256 _balance) external returns(bool){\n\t\tbalance = _balance;\n\t\treturn true;\n\t}\n}\n\n```","x":528,"y":-240,"width":772,"height":460}
+	],
+	"edges":[
+		{"id":"a7de3c2b9df39b17","fromNode":"958f72e4af867709","fromSide":"right","toNode":"e0fcf22262e2b539","toSide":"left","label":"call"},
+		{"id":"99f04862c568e764","fromNode":"44670a627e604713","fromSide":"right","toNode":"958f72e4af867709","toSide":"left"}
+	]
+}

@@ -37,6 +37,37 @@ Contract is divided into business logic and storage logic
 - Storage contract holds the contract state, is immutable and links to logic contract
 - Logic contract contains logic that updates state in storage contract
 - Logic contract can be changed by pointing to new logic contract is storage contract
+- Make old logic contract pausible :
+``` sol
+contract Pausible{
+	
+	event paused();
+	event unpaused();
+	
+	bool paused = false;
+	uint256 data;
+
+	function setdata(uint256 value)public {
+		require(!paused, "Contract is paused");
+		data = value;
+	}
+
+	function pause()public{
+		require(!paused, "Contract is already paused");
+		paused = true;
+	}
 
 
-![[My canvas]]
+	function unpause() public {
+		require(paused, "Contract is already unpaused");
+		paused = false;
+	}
+}
+
+```
+
+
+![[Data seperation.canvas|Data seperation]]
+![[Dataseperation.png]]
+
+# 3. Proxy Contract
