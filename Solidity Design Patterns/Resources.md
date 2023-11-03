@@ -14,3 +14,7 @@
 - Data seperation Trail of bits:  https://blog.trailofbits.com/2018/09/05/contract-upgrade-anti-patterns/
 - Data separation Rocketpool :https://medium.com/rocket-pool/upgradable-solidity-contract-design-54789205276d
 
+- Proxy pattern Openzeppelin: https://blog.openzeppelin.com/proxy-patterns
+- Proxy pattern Trail of bits: https://blog.trailofbits.com/2018/09/05/contract-upgrade-anti-patterns/
+- Unstructured storage proxy Openzeppelin : https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies
+

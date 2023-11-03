@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"38f06a183088e516","type":"text","text":"User","x":-1100,"y":-55,"width":120,"height":50},
+		{"id":"3cfa54f9fae92292","type":"text","text":"Proxy Contract\n\n```sol\ncontract Proxy{\n\tuint256 data;\n\tuint256 logicaddress;\n\n\tfunction set(uint256 _val)public {\n\t\t//Delegate call\n\t\t(bool success, bytes memory data) = Logic(logicaddress).delegatecall(\n\t\t\tabi.encodeSignature(\"setdata(uint256)\",\n\t\t\t_val\n\t\t));\t\n\t}\n\t//data in this contract is the first element of the storage slot which is modified by the Logic contract \n\n}\n```","x":-860,"y":-260,"width":1240,"height":540},
+		{"id":"ec276ef780dadb7d","type":"text","text":"Logic Contract\n\n```sol\ncontract Logic{\n\tuint256 data2;\n\n\tfunction setdata(uint256 _val)public {\n\t\tdata2 = _val;\n\t}\n}\n```","x":600,"y":-177,"width":560,"height":350},
+		{"id":"320a0bd0e99b5ed1","type":"text","text":"Delegate Call\n\n- Execute function from another contract with context of the caller\n- Order of storage variable should be same in the caller's and callee contract\n- Changes of memory corruption if not utilized properly","x":460,"y":-580,"width":500,"height":320}
+	],
+	"edges":[
+		{"id":"44b55ffd2ea5654e","fromNode":"3cfa54f9fae92292","fromSide":"right","toNode":"ec276ef780dadb7d","toSide":"left","label":"Delegate call"},
+		{"id":"412448aef4c6efda","fromNode":"38f06a183088e516","fromSide":"right","toNode":"3cfa54f9fae92292","toSide":"left"}
+	]
+}

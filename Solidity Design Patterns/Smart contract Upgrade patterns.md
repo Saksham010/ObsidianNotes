@@ -71,3 +71,32 @@ contract Pausible{
 ![[Dataseperation.png]]
 
 # 3. Proxy Contract
+
+-  Opposite of data separation: 
+	- User interact with proxy contract which holds the storage of the contract
+	- Proxy calls logic contract to update the state in Proxy contract
+- Proxy contract changes pointer to another logic contract during upgrade
+
+![[Proxydelegate.canvas|Proxydelegate]]
+Proxy upgrade approaches:
+
+1. Inherited Storage
+	- Both proxy and logic contract contains same memory layout through inheritance from a memory layout
+	- Upgraded contract should hold same memory layout + additional state and functionality
+	![[inheritedstorage.canvas|inheritedstorage]]
+2. Eternal Storage
+	- Similar to inherited storage but state stored in mapping
+3. Unstructured storage
+	- Storage variables in proxy contract is stored at a randomized slot so that there is no storage collision with the logic contract
+	- Completely immune to data storage collision
+	- Randomized storage is achieved by:
+	```sol
+	bytes32 private constant implementationPosition = 
+	bytes32(uint256( keccak256('eip1967.proxy.implementation')) - 1 ));
+	```
+	![[beforeUnstructuredStorage.png]]
+	![[AfterUnstructuredStorage.png]]
+
+	Risk: 
+		- Handling delegate call securely is hard task. (Chances of extreme vulnerability if delegate call is implemented with improper knowledge)
+		- Changes of storage collision due to delegate call

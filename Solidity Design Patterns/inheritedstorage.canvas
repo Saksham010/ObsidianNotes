@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"44c46747d0920bcc","type":"group","x":-920,"y":-500,"width":720,"height":420,"label":"1. Inherited Storage"},
+		{"id":"bb8bf78af6e50976","type":"text","text":"Proxy contract","x":-900,"y":-300,"width":250,"height":60},
+		{"id":"3ebd9dc73b1bda74","type":"text","text":"Memory layout","x":-680,"y":-480,"width":220,"height":60},
+		{"id":"4307582747b991fb","type":"text","text":"Logic contract","x":-500,"y":-300,"width":220,"height":60},
+		{"id":"c718323e3e641229","type":"text","text":"Logic 2 contract","x":-440,"y":-160,"width":220,"height":60}
+	],
+	"edges":[
+		{"id":"49dbcb3da6ade603","fromNode":"3ebd9dc73b1bda74","fromSide":"bottom","toNode":"bb8bf78af6e50976","toSide":"top","label":"Inherit"},
+		{"id":"c8919570bdc4224a","fromNode":"3ebd9dc73b1bda74","fromSide":"bottom","toNode":"4307582747b991fb","toSide":"top","label":"Inherit"},
+		{"id":"8a379be5681bd3c6","fromNode":"3ebd9dc73b1bda74","fromSide":"bottom","toNode":"c718323e3e641229","toSide":"left","label":"Inherit"}
+	]
+}
