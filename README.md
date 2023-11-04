@@ -1,2 +1,2 @@
-# ObsidianNotes
-All obsidain notes
+# Research
+Research notes in obsidian
